@@ -55,3 +55,11 @@ p+geom_bar()
 p+geom_bar(position = "stack")
 p+geom_bar(position = "dodge")
 p+geom_bar(position = "fill")
+
+
+# Scale
+w=read.csv(file="WDS2012.csv",head=TRUE,sep=",")
+w$tfrGT2 <- w$tfr >2
+p <- ggplot(data = w, aes(x = area, fill = tfrGT2))
+p+geom_bar(color = "black")+scale_fill_grey()
+p+geom_bar(color="black") + scale_fill_brewer()
