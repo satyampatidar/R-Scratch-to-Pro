@@ -20,3 +20,7 @@ p+geom_point()+geom_text(aes(label=country), nudge_y = .2, size = 4)+xlim(50,80)
 
 p+geom_point()+geom_label(aes(label= country),nudge_y = .3,size=3)+xlim(50,80)+ylim(2,6)
 
+#Facets
+p <- ggplot(data = w, aes(x = le, y = imr))+geom_jitter()
+p+facet_grid(.~area)
+p+facet_grid(area~.)
