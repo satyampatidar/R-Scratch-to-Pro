@@ -41,3 +41,8 @@ w=read.csv(file="WDS2012.csv",head=TRUE,sep=",")
 p <- ggplot(data = w,aes(x=le))
 p+geom_freqpoly(color = "red", size = 1, binwidth=1)
 p+geom_histogram(fill="darkgray",binwidth = 1)+geom_freqpoly(color = "red", size  = 1, binwidth=1)
+
+# Bar Chart
+wb <- read.csv(file="WDS2012.csv",head=TRUE,sep=",")
+wb
+p <- ggplot(data = wb, aes(x=area))
