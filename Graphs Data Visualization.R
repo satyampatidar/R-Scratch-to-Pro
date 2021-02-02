@@ -46,3 +46,12 @@ p+geom_histogram(fill="darkgray",binwidth = 1)+geom_freqpoly(color = "red", size
 wb <- read.csv(file="WDS2012.csv",head=TRUE,sep=",")
 wb
 p <- ggplot(data = wb, aes(x=area))
+
+#Stack Bar
+w=read.csv(file="WDS2012.csv",head=TRUE,sep=",")
+w$tfrGT2 <- w$tfr >2
+p <- ggplot(data = w, aes(x = area, fill = tfrGT2))
+p+geom_bar()
+p+geom_bar(position = "stack")
+p+geom_bar(position = "dodge")
+p+geom_bar(position = "fill")
