@@ -30,3 +30,14 @@ w$tfrGT2 <- w$tfr >2
 p <- ggplot(data = w, aes(x = le, y = imr))+geom_jitter()
 p+facet_grid(area~tfrGT2,labeller="label_both")
 p+facet_grid(tfrGT2~area,labeller = "label_both",margins = TRUE)
+
+
+#Histogram
+w=read.csv(file="WDS2012.csv",head=TRUE,sep=",")
+p <- ggplot(data = w,aes(x=le))
+p+geom_histogram()
+
+w=read.csv(file="WDS2012.csv",head=TRUE,sep=",")
+p <- ggplot(data = w,aes(x=le))
+p+geom_freqpoly(color = "red", size = 1, binwidth=1)
+p+geom_histogram(fill="darkgray",binwidth = 1)+geom_freqpoly(color = "red", size  = 1, binwidth=1)
