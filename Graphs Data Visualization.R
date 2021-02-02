@@ -24,3 +24,9 @@ p+geom_point()+geom_label(aes(label= country),nudge_y = .3,size=3)+xlim(50,80)+y
 p <- ggplot(data = w, aes(x = le, y = imr))+geom_jitter()
 p+facet_grid(.~area)
 p+facet_grid(area~.)
+
+# More Facets
+w$tfrGT2 <- w$tfr >2
+p <- ggplot(data = w, aes(x = le, y = imr))+geom_jitter()
+p+facet_grid(area~tfrGT2,labeller="label_both")
+p+facet_grid(tfrGT2~area,labeller = "label_both",margins = TRUE)
