@@ -1,0 +1,11 @@
+Airport ID,Airport Name,Is Primary Airport
+1,BLR,0
+2,DFW,0
+3,DUB,0
+4,JFK,1
+5,LAX,0
+6,LHR,0
+7,LUV,1
+8,MAD,1
+9,MUM,0
+10,NDL,1
