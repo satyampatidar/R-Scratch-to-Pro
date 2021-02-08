@@ -1,9 +1,17 @@
 library(ggplot2)
 
 # Scatter plot of hwy vs cyl
-
+# Way 1
 p <- ggplot(data = mpg, aes(hwy,cyl))
 p+geom_point(alpha = 3, color = "blue", size = 3)
+
+# Way 2
+p <- ggplot(data = mpg, aes(x = hwy, y = cyl))
+p+geom_point()
+
+#Way3
+ggplot(mpg, aes(hwy,cyl))+geom_point()
+
 
 # Scatterplot of class vs drv
 p <- ggplot(data = mpg, aes(class, drv))+geom_point()
@@ -16,5 +24,21 @@ p+geom_jitter()
 
 ggplot(data = mpg) +  geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
 # Color is worng since it should be outside the bracket
-ggplot(data = mpg) +  geom_point(mapping = aes(x = displ, y = hwy)) # Default is Black
-ggplot(data = mpg)+geom_point(mapping = aes(x = displ, y = hwy), colour = "blue") #correct
+
+ggplot(data = mpg) +  geom_point(mapping = aes(x = displ, y = hwy))
+# Default is Black
+
+ggplot(data = mpg)+geom_point(mapping = aes(x = displ, y = hwy), colour = "blue")
+#correct
+
+ggplot(mpg, aes(displ, hwy, colors(ditinct = FALSE)))+geom_point()
+# No Shade
+
+ggplot(mpg, aes(x = displ,y = hwy, colour = cty))+geom_point()
+# Continuous Variable
+
+ggplot(mpg, aes(x = displ,y = hwy, size = cty))+geom_point()
+# Continuous Variable
+
+ggplot(mpg, aes(x = displ,y = hwy, shape = cty))+geom_point()
+# Error - A continuous variable can not be mapped to shape
