@@ -42,3 +42,14 @@ ggplot(mpg, aes(x = displ,y = hwy, size = cty))+geom_point()
 
 ggplot(mpg, aes(x = displ,y = hwy, shape = cty))+geom_point()
 # Error - A continuous variable can not be mapped to shape
+
+ggplot(mpg, aes(x = displ,y = hwy, size = hwy))+geom_point()
+ggplot(mpg, aes(x = displ,y = hwy, size = displ))+geom_point()
+ggplot(mpg, aes(x = displ,y = hwy, colour = displ))+geom_point()
+ggplot(mpg, aes(x = displ,y = hwy, colour = hwy))+geom_point()
+ggplot(mpg, aes(x = displ,y = hwy, colour = hwy, size = hwy))+geom_point()
+ggplot(mpg, aes(x = displ,y = hwy, colour = hwy, size = displ))+geom_point()
+ggplot(mpg, aes(x = displ,y = hwy, colour = displ, size = hwy))+geom_point()
+
+# If you compare above plots to original versions ploted in the above codes.
+# You will find that code produces plots but plots are bad. This is redundant and not adviced.
