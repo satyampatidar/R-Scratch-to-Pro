@@ -53,3 +53,7 @@ ggplot(mpg, aes(x = displ,y = hwy, colour = displ, size = hwy))+geom_point()
 
 # If you compare above plots to original versions ploted in the above codes.
 # You will find that code produces plots but plots are bad. This is redundant and not adviced.
+
+ggplot(mpg, aes(displ, hwy, colour = displ < 5))+geom_point()
+# Produces different color to th plot greater than 5 on X axis
+
