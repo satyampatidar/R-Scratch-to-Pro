@@ -57,3 +57,33 @@ ggplot(mpg, aes(x = displ,y = hwy, colour = displ, size = hwy))+geom_point()
 ggplot(mpg, aes(displ, hwy, colour = displ < 5))+geom_point()
 # Produces different color to th plot greater than 5 on X axis
 
+ggplot(data = mpg) +  geom_point(mapping = aes(x = drv, y = cyl))
+p <- ggplot(data = mpg) +  geom_point(mapping = aes(x = drv, y = cyl))+facet_grid(drv ~ cyl)
+p+facet_grid(drv ~ cyl)
+# No change except for outer boundary. Nothing to observe with fewer plots
+
+# The symbol . ignores that dimension while faceting.
+ggplot(data = mpg) +   geom_point(mapping = aes(x = displ, y = hwy)) +   facet_grid(drv ~ .)
+# Facet drv on Y Axis
+
+ggplot(data = mpg) +   geom_point(mapping = aes(x = displ, y = hwy)) +   facet_grid(. ~ cyl)
+# Facet cyl on X Axis
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + geom_point() + geom_smooth()
+
+ggplot() + geom_point(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy))
+
+# Both graph looks same, since they inherit data from ggplot in second code
+
+ggplot(mpg, aes(displ,hwy))+geom_point()+geom_smooth(se = FALSE)
+
+ggplot(mpg, aes(displ, hwy))+geom_smooth(mapping = aes(group = drv), se = FALSE)+geom_point()
+
+ggplot(mpg, aes(displ, hwy, colour = drv))+geom_point()+geom_smooth(se = FALSE)
+
+ggplot(mpg, aes(displ,hwy))+geom_point(aes(colour = drv))+geom_smooth(se = FALSE)
+
+ggplot(mpg, aes(displ, hwy))+geom_point(aes(colour = drv))+geom_smooth(aes(linetype = drv), se = FALSE)
+
+ggplot(mpg, aes(displ,hwy))+geom_point(size = 4, color = "white")+geom_point(aes(colour = drv))
