@@ -8,6 +8,7 @@ data("diamonds")
 # Analysing the columns with mean, median, itemwise, Quarterwise
 summary(diamonds)
 View(diamonds)
+?diamonds
 
 # Loading Dimensions
 dim(diamonds)
