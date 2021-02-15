@@ -45,3 +45,11 @@ y+geom_histogram()
 
 y <- ggplot(diamonds, aes(x = price))
 y+geom_density()
+
+y <- ggplot(diamonds, aes(x = price, color = cut))
+y+geom_density()
+
+# Box Plot
+
+z <- ggplot(diamonds, aes(x = color, y = price))
+z+geom_boxplot()
