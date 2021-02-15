@@ -28,3 +28,20 @@ x <- ggplot(diamonds, aes(carat,price, color = clarity))
 x+geom_smooth(se = FALSE)
 
 
+# Histograms
+
+y <- ggplot(diamonds, aes(x = diamonds$price))
+y+geom_histogram()
+
+# To avoid warning
+y <- ggplot(diamonds, aes(x = price))
+y+geom_histogram()
+
+y <- ggplot(diamonds, aes(x = price, fill = clarity))
+y+geom_histogram()
+
+y <- ggplot(diamonds, aes(x = price, fill = cut))
+y+geom_histogram()
+
+y <- ggplot(diamonds, aes(x = price))
+y+geom_density()
