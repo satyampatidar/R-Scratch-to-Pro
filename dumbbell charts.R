@@ -25,3 +25,12 @@ names(plotdata_wide) <- c("country","y1952","y2007")
 
 ggplot(plotdata_wide, aes(y=country, x= y1952, xend = y2007))+
   geom_dumbbell()
+
+# Graph is not sorted
+
+ggplot(plotdata_wide, aes(reorder(country, y1952),x = y1952, xend = y2007))+
+  geom_dumbbell(size = 1.2, size_x = 3, size_xend = 3, colour = "grey",
+                colour_x = "blue", colour_xend = "red")+ theme_minimal()+
+                labs(title = "Change in Life Expectancy", subtitle = "1952 to 2007", x = "Life Expectancy (Years)", y = "")
+ 
+ 
