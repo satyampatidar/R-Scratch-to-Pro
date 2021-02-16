@@ -1,1 +1,0 @@
-# Dummbell Charts
