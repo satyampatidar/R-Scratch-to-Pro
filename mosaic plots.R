@@ -16,6 +16,8 @@ ftable(tbl)
 
 mosaic(tbl, main = "Titanic Data")
 
+# Colourful Plot
+
 mosaic(tbl, 
        shade = TRUE,
        legend = TRUE,
