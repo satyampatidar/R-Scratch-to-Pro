@@ -16,4 +16,13 @@ ftable(tbl)
 
 mosaic(tbl, main = "Titanic Data")
 
-
+mosaic(tbl, 
+       shade = TRUE,
+       legend = TRUE,
+       labeling_args = list(set_varnames = c(Sex = "Gender",
+                                             Survived = "Survived",
+                                             Class = "Passenger Class")),
+       set_labels = list(Survived = c("No", "Yes"),
+                         Class = c("1st", "2nd", "3rd", "Crew"),
+                         Sex = c("F", "M")),
+                         main = "Titanic data")
