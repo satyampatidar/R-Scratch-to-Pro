@@ -2,12 +2,16 @@
 
 library(scatterplot3d)
 
+# Raw Graph
+
 with(mtcars,{
   scatterplot3d(x=disp,
                 y= wt,
                 z = mpg,
                 main = "3-D Scatterplot Example1")
 })
+
+# Beautifying the Graph
 
 with(mtcars,{
   scatterplot3d(x = disp, y = wt, z = mpg, color = "blue",
