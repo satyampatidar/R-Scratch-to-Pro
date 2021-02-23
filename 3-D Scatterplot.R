@@ -22,3 +22,14 @@ with(mtcars,{
                 zlab = "Miles/(US) Gallon")
   
 })
+
+# convert 3-D coords to 2D projection
+s3d.coords <- s3d$xyz.convert(disp, wt, mpg) 
+
+# plot text with 50% shrink and place to right of points
+text(s3d.coords$x, 
+     s3d.coords$y,   
+     labels = row.names(mtcars),  
+     cex = .5, 
+     pos = 4)
+})
