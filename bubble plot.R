@@ -1,8 +1,11 @@
+# Loading library
+
 library(ggplot2)
 library(scatterplot3d)
 
 data(mtcars)
-ggplot(mtcars, aes(x = wt, y = mpg, size = hp))+geom_point()
+ggplot(mtcars, aes(x = wt, y = mpg, size = hp))+geom_point()+geom_smooth()
+
 # create a bubble plot with modifications
 ggplot(mtcars,        aes(x = wt, y = mpg, size = hp)) +
   geom_point(alpha = .5,
@@ -14,4 +17,4 @@ ggplot(mtcars,        aes(x = wt, y = mpg, size = hp)) +
   subtitle = "Motor Trend US Magazine (1973-74 models)",
   x = "Weight (1000 lbs)",       
   y = "Miles/(US) gallon",
-  size = "Gross horsepower")
+  size = "Gross horsepower")+ geom_smooth()
