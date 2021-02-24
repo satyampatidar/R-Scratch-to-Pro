@@ -9,6 +9,9 @@ help(astsa)
 help(jj)
 View()
 
+df=data.frame(jj) #converting it to dataframe
+df
+
 # jj[1]
 
 plot(jj, type = "o", ylab = "Earining per share", main = "Johnson and Johnson")
@@ -25,6 +28,23 @@ qqline(dljj)             # add a line
 
 #No Boxplot cannot be drawn
 
-y <- ggplot(jj, aes(x = price, fill = clarity))
-y+geom_histogram()
+a=ggplot(df,aes(jj))
+#plot the histogram
+a+geom_histogram()
+
+#qqplot
+qqnorm(jj)
+
+#beautify
+a+geom_histogram(color="dark blue",fill="light blue")
+
+#boxplot
+a+geom_boxplot()
+
+
+#q8
+a+geom_density()
+
+#area curve
+a+geom_area(stat="bin")
 
